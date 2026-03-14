@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="RepairCure Blog — Expert tips, maintenance guides, and the latest news on home appliance care from RepairCure Hubballi.">
+    <title>RepairCure Blog | Appliance Repair Tips & Guides</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css?v=8">
+    <link rel="icon" type="image/png" href="favicon_solid.png">
+    <meta property="og:title" content="RepairCure | Hubballi Appliance Repair">
+    <meta property="og:description" content="Premium home appliance repair service based in Hubballi, India. AC, Refrigerator, Washing Machine, Microwave, and RO Purifier repairs.">
+    <meta property="og:image" content="og-image.png">
+    <meta property="og:type" content="website">
+    <style>
+        .blog-hero {
+            padding: 10rem 5% 4rem;
+            text-align: center;
+            background: radial-gradient(circle at center top, rgba(100, 255, 218, 0.05) 0%, var(--bg-primary) 60%);
+        }
+
+        .blog-hero p {
+            max-width: 600px;
+            margin: 0 auto;
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .blog-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-glow);
+            border-color: rgba(245, 166, 35, 0.3);
+        }
+
+        .blog-img-wrapper {
+            width: 100%;
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .blog-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover .blog-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .blog-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .blog-meta {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .blog-meta .category {
+            color: var(--accent-teal);
+            font-weight: 600;
+        }
+
+        .blog-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            transition: color 0.3s ease;
+        }
+
+        .blog-card:hover .blog-content h3 {
+            color: var(--accent-gold);
+        }
+
+        .blog-content p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .read-more {
+            color: var(--accent-gold);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .read-more i {
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover .read-more i {
+            transform: translateX(4px);
+        }
+
+        /* Keep "RepairCure Blog" on one line on mobile */
+        @media (max-width: 500px) {
+            .blog-hero .heading-hero {
+                font-size: clamp(1.8rem, 8vw, 3rem);
+                white-space: nowrap;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Liquid Glass SVG Filter for Dynamic Island -->
+    <svg style="display:none;" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <filter id="liquid-glass">
+                <feGaussianBlur in="SourceGraphic" stdDeviation="15" result="blur" />
+                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 25 -10"
+                    result="liquid-glass" />
+                <feComposite in="SourceGraphic" in2="liquid-glass" operator="atop" />
+            </filter>
+        </defs>
+    </svg>
+
+    <!-- Sticky Navbar safely placed at root level -->
+    <header id="navbar">
+        <a href="index.html#hero" class="nav-logo">
+            <img src="Logo_gold.png" alt="RepairCure Logo">
+            <span>RepairCure</span>
+        </a>
+        <nav class="nav-links-wrapper">
+            <div class="nav-indicator">
+                <div class="nav-lamp">
+                    <div class="nav-lamp-glow-1"></div>
+                    <div class="nav-lamp-glow-2"></div>
+                    <div class="nav-lamp-glow-3"></div>
+                </div>
+            </div>
+            <a href="index.html#hero" class="nav-link">Home</a>
+            <a href="index.html#services" class="nav-link">Services</a>
+            <a href="blog.html" class="nav-link active">Blog</a>
+        </nav>
+        <a href="index.html#booking" class="btn btn-premium-gradient nav-cta star-btn" id="navStarBtn">
+            <!-- Wrapper that masks the light to the pixel border -->
+            <div class="star-btn-mask">
+                <div class="star-btn-light"></div>
+            </div>
+            Book Now
+        </a>
+        
+        <!-- Mobile Menu Toggle -->
+        <div class="mobile-menu-toggle">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main>
+        <section class="blog-hero">
+            <h1 class="heading-hero">RepairCure <span class="italic-serif text-gradient-gold">Blog</span></h1>
+            <p>Expert tips, maintenance guides, and the latest news on home appliance care from RepairCure Hubballi.</p>
+        </section>
+
+        <section class="section-padding" style="padding-top: 0;">
+            <div class="container">
+                <div class="blog-grid">
+                    <!-- Complete Blog Post Card -->
+                    <a href="blog-ac-summer-tips.html" class="blog-card">
+                        <div class="blog-img-wrapper">
+                            <img src="service-ac.jpg" alt="AC Diagnostic Guide">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="category">AC Maintenance</span>
+                                <span class="date">Mar 5, 2026</span>
+                            </div>
+                            <h3>5 Signs Your AC Needs Servicing Before Summer Hits Hubballi</h3>
+                            <p>Don't wait for the heat wave. Learn the 5 critical warning signs from our technicians who
+                                have serviced 4,700+ ACs across the city...</p>
+                            <span class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+
+                    <!-- Blog Card 2 -->
+                    <a href="#" class="blog-card">
+                        <div class="blog-img-wrapper">
+                            <img src="service-fridge.jpg" alt="Refrigerator Care Guide">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-meta">
+                                <span class="category">Refrigerator Care</span>
+                                <span class="date">Feb 28, 2026</span>
+                            </div>
+                            <h3>How to Increase the Lifespan of Your Compressor</h3>
+                            <p>Expert tips on keeping your refrigerator running efficiently without stressing the
+                                primary motor component.</p>
+                            <span class="read-more">Read Article <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <div class="footer-logo">
+                    <img src="Logo_gold.png" alt="RepairCure Logo">
+                    <span>RepairCure</span>
+                </div>
+                <div class="gold-divider"></div>
+                <p>We Deliver You Peace of Mind. Hubballi's most trusted repair partner.</p>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/repaircure/" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://x.com/RepairCure" target="_blank" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="https://www.youtube.com/@RepairCure" target="_blank" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                    <a href="https://wa.me/918892614735" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-col links-col">
+                <h4>Quick Links</h4>
+                <a href="about.html">About Us</a>
+                <a href="blog.html" style="color: var(--accent-gold)">Blog</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#booking">Book Service</a>
+            </div>
+            <div class="footer-col contact-col">
+                <h4>Contact Details</h4>
+                <a href="https://www.google.com/maps/search/?api=1&query=Hubballi,+Karnataka,+India" target="_blank"><i class="fa-solid fa-location-dot"></i> Hubballi, Karnataka, India</a>
+                <a href="tel:+918892614735"><i class="fa-solid fa-phone"></i> +91 88926 14735</a>
+                <a href="mailto:repaircure@gmail.com"><i class="fa-solid fa-envelope"></i> repaircure@gmail.com</a>
+                <a href="https://wa.me/918892614735" class="whatsapp-btn" target="_blank"><i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp</a>
+            </div>
+            <div class="footer-col legal-col">
+                <h4>Legal</h4>
+                <a href="faq.html">FAQ</a>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 RepairCure. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
